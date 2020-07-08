@@ -1,45 +1,47 @@
-puts "how large you want the array to be"
+puts 'how large you want the array to be'
 places = gets.chomp.to_i
 
 array = Array.new(places)
 
-array.each_with_index do |number, i|
-  puts "please, let me know the ##{i + 1}"
+i = 0
+array.each do
+  puts "Value of local variable is #{i + 1}"
   array[i] = gets.chomp
+  i += 1
 end
 
-$length = array.length
-
-def bubble_sort (an_array)
+def bubble_sort(an_array)
+  length = an_array.length
   i = 0
-  while i < $length do
+  while i < length
     j = 1
     counter = 0
-    while j < $length do
+    while j < length
       if an_array[j - 1].to_i > an_array[j].to_i
-          an_array[j - 1], an_array[j] = an_array [j], an_array[j - 1]
-          counter += 1
+        an_array[j - 1], an_array[j] = an_array [j], an_array[j - 1]
+        counter += 1
       end
       j += 1
     end
-    counter == 0 ? break : i +=1
+    counter.zero? ? break : i += 1
   end
-an_array
+  an_array
 end
 
 def bubble_sort_by(an_array)
+  length = an_array.length
   i = 0
-  while i < $length do
+  while i < length
     j = 1
     counter = 0
-    while j < $length do
-      if yield(an_array[j - 1], an_array[j]) > 0
+    while j < length
+      if yield(an_array[j - 1], an_array[j]).positive?
         an_array[j - 1], an_array[j] = an_array[j], an_array[j - 1]
         counter += 1
       end
       j += 1
     end
-    counter == 0 ? break : i += 1
+    counter.zero? ? break : i += 1
   end
   an_array
 end
@@ -48,8 +50,8 @@ bubble_sort_by(array) do |left, right|
   left.length - right.length
 end
 
-puts "Array sorted chain"
+puts 'Array sorted by number of caracter'
 p array
 
-puts "Array sorted number"
+puts 'Array sorted by number'
 p bubble_sort(array)
