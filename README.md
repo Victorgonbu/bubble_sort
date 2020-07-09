@@ -1,4 +1,4 @@
-# bubble_sort
+# Advanced Building Blocks - Bubble Sort
 
 This project assignment consisted in building a #bubble_sort method that takes an array and returns a sorted array and a #buuble_sort_by method which sorts an array by accepting a block.
 
