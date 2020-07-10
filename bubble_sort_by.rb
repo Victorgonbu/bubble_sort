@@ -11,6 +11,8 @@ array.each do
 end
 
 def bubble_sort_by(an_array)
+  return "#{an_array} Block no given: missing expected arguments" unless block_given?
+
   length = an_array.length
   i = 0
   while i < length
@@ -28,9 +30,12 @@ def bubble_sort_by(an_array)
   an_array
 end
 
+puts 'if a block is not given'
+p bubble_sort_by(array)
+
 bubble_sort_by(array) do |left, right|
   left.length - right.length
 end
 
-puts 'Array sorted by number of caracter'
+puts 'Array sorted by number of characters (block given)'
 p array

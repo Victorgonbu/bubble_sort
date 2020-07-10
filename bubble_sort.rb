@@ -28,5 +28,5 @@ def bubble_sort(an_array)
   an_array
 end
 
-puts 'Array sorted by number'
+puts 'Array sorted by number value'
 p bubble_sort(array)
