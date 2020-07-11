@@ -1,17 +1,5 @@
-puts 'how large you want the array to be'
-places = gets.chomp.to_i
-
-array = Array.new(places)
-
-i = 0
-array.each do
-  puts "Value of local variable is #{i + 1}"
-  array[i] = gets.chomp
-  i += 1
-end
-
 def bubble_sort_by(an_array)
-  return "#{an_array} Block no given: missing expected arguments" unless block_given?
+  return 'Block not given' unless block_given?
 
   length = an_array.length
   i = 0
@@ -29,13 +17,3 @@ def bubble_sort_by(an_array)
   end
   an_array
 end
-
-puts 'if a block is not given'
-p bubble_sort_by(array)
-
-bubble_sort_by(array) do |left, right|
-  left.length - right.length
-end
-
-puts 'Array sorted by number of characters (block given)'
-p array

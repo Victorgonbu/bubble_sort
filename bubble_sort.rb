@@ -1,15 +1,3 @@
-puts 'how large you want the array to be'
-places = gets.chomp.to_i
-
-array = Array.new(places)
-
-i = 0
-array.each do
-  puts "Value of local variable is #{i + 1}"
-  array[i] = gets.chomp.to_i
-  i += 1
-end
-
 def bubble_sort(an_array)
   length = an_array.length
   i = 0
@@ -27,6 +15,3 @@ def bubble_sort(an_array)
   end
   an_array
 end
-
-puts 'Array sorted by number value'
-p bubble_sort(array)
