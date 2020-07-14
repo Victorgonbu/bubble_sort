@@ -1,6 +1,4 @@
 def bubble_sort_by(an_array)
-  return 'Block not given' unless block_given?
-
   length = an_array.length
   i = 0
   while i < length
